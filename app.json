@@ -50,7 +50,7 @@
       },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
-        "value": ""
+        "value": "8f7aba59-a327-47c7-878d-b607b8cf0939"
       },
       "HEROKU_APP_NAME": {
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
@@ -154,7 +154,7 @@
       "URL": {
          "description": "The Heroku App URL :-  https://<appname>.herokuapp.com/",
          "required": false,
-         "value": ""
+         "value": "https://ultrongbot.herokuapp.com/"
       },
       "No_LOAD": {
          "description": "Dont load these modules cause they shit, space separation",
