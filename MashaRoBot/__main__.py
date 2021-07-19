@@ -74,10 +74,10 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-[.](https://telegra.ph/file/5f2b833cdf54b14371ea9.jpg)
+[`Hello I'm` Ultron
+`I'm here to help you manage your groups! Hit` *📚Commands* `button below to find out more about how to use me to my full potential.`](https://telegra.ph/file/5f2b833cdf54b14371ea9.jpg)
 
-`Hello I'm` Ultron
-`I'm here to help you manage your groups! Hit` *📚Commands* `button below to find out more about how to use me to my full potential.` 
+ 
 """
 
 buttons = [
@@ -87,13 +87,13 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="masha_"),
-        InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),
+        '''InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),'''
     ],
     [
         InlineKeyboardButton(
-            text="💾 SOURCE", callback_data="source_"),
+            text="⚠️ UPDATES", url="https://t.me/ultronupdates"),
         InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://t.me/wastebots"
+            text="👥 SUPPORT", url="https://t.me/ultron_support"
         ),
     ],
 ]
@@ -348,16 +348,14 @@ def Masha_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "masha_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *MASHA*, a powerful group management bot built to help you manage your group easily.
-                 ❍ I can restrict users.
-                 ❍ I can greet users with customizable welcome messages and even set a group's rules.
-                 ❍ I have an advanced anti-flood system.
-                 ❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 ❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 ❍ I check for admins' permissions before executing any command and more stuffs
-                 \n_Masha's licensed under the GNU General Public License v3.0_
-                 Here is the [💾Repository](https://github.com/Mr-Dark-Prince/MashaRoBot).
-                 If you have any question about Masha, let us know at @WasteBots.""",
+            text=""" ℹ️ I'm Ultron, a powerful group management bot built to help you manage your group easily.
+                 >> I can restrict users.
+                 >> I can greet users with customizable welcome messages and even set a group's rules.
+                 >> I have an advanced anti-flood system.
+                 >> I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
+                 >> I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
+                 >> I check for admins' permissions before executing any command and more stuffs.
+                 """,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -378,7 +376,7 @@ def Masha_about_callback(update: Update, context: CallbackContext):
         )
 
 
-@run_async
+'''@run_async
 def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
@@ -402,7 +400,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
                 disable_web_page_preview=False,
-        )
+        ) '''
 
 @run_async
 def get_help(update: Update, context: CallbackContext):
