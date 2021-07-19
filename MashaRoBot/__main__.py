@@ -74,14 +74,16 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hellow My name is` *Masha*
+[.](https://telegra.ph/file/5f2b833cdf54b14371ea9.jpg)
+
+`Hello I'm` Ultron
 `I'm here to help you manage your groups! Hit` *📚Commands* `button below to find out more about how to use me to my full potential.` 
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD MASHA TO YOUR GROUP ➕️", url="t.me/MashaRoBot?startgroup=true"),
+            text="➕️ Add Ultron To Your Group ➕️", url="t.me/Ultron_probot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="masha_"),
