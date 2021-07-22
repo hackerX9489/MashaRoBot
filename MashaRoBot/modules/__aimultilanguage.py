@@ -25,10 +25,10 @@ url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 from google_trans_new import google_translator
 from pyrogram import filters
 
-from YoneRobot import BOT_ID
-from YoneRobot.helper_extra.aichat import add_chat, get_session, remove_chat
-from YoneRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from YoneRobot import pbot as yone
+from MashaRoBot import BOT_ID
+from MashaRoBot.helper_extra.aichat import add_chat, get_session, remove_chat
+from MashaRoBot.pyrogramee.pluginshelper import admins_only, edit_or_reply
+from MashaRoBot import pbot as MashaRoBot
 
 translator = google_translator()
 
@@ -37,15 +37,15 @@ def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
 
-yone_chats = []
+MashaRoBot_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 
 
-@yone.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
+@MashaRoBot.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
 @admins_only
 async def hmm(_, message):
-    global yone_chats
+    global MashaRoBot_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
@@ -57,20 +57,20 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("yone AI Already Activated In This Chat")
+            await lel.edit("Ultron AI Already Activated In This Chat")
             return
         await lel.edit(
-            f"yone AI Successfully Added For Users In The Chat {message.chat.id}"
+            f"Ultron AI Successfully Added For Users In The Chat {message.chat.id}"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("yone AI Was Not Activated In This Chat")
+            await lel.edit("Ultron AI Was Not Activated In This Chat")
             return
         await lel.edit(
-            f"yone AI Successfully Deactivated For Users In The Chat {message.chat.id}"
+            f"ultron AI Successfully Deactivated For Users In The Chat {message.chat.id}"
         )
 
     elif status == "EN" or status == "en" or status == "english":
@@ -86,7 +86,7 @@ async def hmm(_, message):
         )
 
 
-@yone.on_message(
+@MashaRoBot.on_message(
     filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
@@ -101,8 +101,8 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("yone", "Aco")
-        test = test.replace("yone", "Aco")
+        test = test.replace("ultron", "Aco")
+        test = test.replace("ultron", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
@@ -163,8 +163,8 @@ async def hmm(client, message):
         # test = emoji.demojize(test.strip())
 
         # Kang with the credits bitches @InukaASiTH
-        test = test.replace("yone", "Aco")
-        test = test.replace("yone", "Aco")
+        test = test.replace("Ultron", "Aco")
+        test = test.replace("Ultron", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
@@ -192,7 +192,7 @@ async def hmm(client, message):
             print(e)
 
 
-@yone.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
+@MashaRoBot.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
 async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -233,8 +233,8 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("yone", "Aco")
-    test = test.replace("yone", "Aco")
+    test = test.replace("Ultron", "Aco")
+    test = test.replace("Ultron", "Aco")
     querystring = {
         "bid": "178",
         "key": "sX5A2PcYZbsN5EY6",
@@ -262,8 +262,8 @@ async def inuka(client, message):
         print(e)
 
 
-@yone.on_message(
-    filters.regex("yone|Yone|kittu|hello|hi")
+@MashaRoBot.on_message(
+    filters.regex("ultron|ultron|naren|hello|hi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -310,8 +310,8 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("yone", "Aco")
-    test = test.replace("yone", "Aco")
+    test = test.replace("Ultron", "Aco")
+    test = test.replace("Ultron", "Aco")
     querystring = {
         "bid": "178",
         "key": "sX5A2PcYZbsN5EY6",
@@ -326,7 +326,7 @@ async def inuka(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "yone")
+    result = result.replace("Aco", "Ultron")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace("<\/a>", "</a>")
     pro = result
