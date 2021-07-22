@@ -1,4 +1,4 @@
-from Jarvis.services.mongo import mongodb as db_x
+from MashaRoBot.services.mongo import mongodb as db_x
 
 lydia = db_x["CAHTBOT"]
 
