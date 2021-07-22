@@ -20,8 +20,8 @@ from motor import motor_asyncio
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 
-from Jarvis import log
-from Jarvis.config import get_int_key, get_str_key
+from MashaRoBot import log
+from MashaRoBot.config import get_int_key, get_str_key
 
 MONGO_URI = get_str_key("MONGO_URI")
 MONGO_PORT = get_int_key("MONGO_PORT")
